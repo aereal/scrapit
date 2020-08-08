@@ -1,5 +1,7 @@
 import React, {FC} from "react"
 import Head from "next/head"
+import Container from "@material-ui/core/Container"
+import Typography from "@material-ui/core/Typography"
 
 const Home: FC = () => (
   <>
@@ -7,9 +9,9 @@ const Home: FC = () => (
       <title>Scrapit</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <div>
-      <h1>Scrapit</h1>
-    </div>
+    <Container maxWidth="sm">
+      <Typography>Scrapit</Typography>
+    </Container>
   </>
 )
 export default Home
