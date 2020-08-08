@@ -28,5 +28,66 @@
     "eslint-plugin-react-hooks": "^4.0.8",
     "prettier": "^2.0.5",
     "typescript": "^3.9.7"
+  },
+  "prettier": {
+    "width": 120,
+    "semi": false,
+    "trailingComma": "all",
+    "bracketSpacing": false
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript",
+      "plugin:jsx-a11y/recommended",
+      "plugin:prettier/recommended",
+      "prettier/@typescript-eslint"
+    ],
+    "plugins": [
+      "@typescript-eslint",
+      "react",
+      "react-hooks",
+      "jsx-a11y",
+      "import"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "env": {
+      "node": true,
+      "es6": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 2019,
+      "sourceType": "module",
+      "createDefaultProgram": true,
+      "project": "./tsconfig.json",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "rules": {
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "test/**/*.ts"
+          ]
+        }
+      ],
+      "import/first": "error",
+      "import/order": "error",
+      "react/prop-types": 0
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
   }
 }
