@@ -19,6 +19,9 @@ const AddPage: FC = () => {
       <Container maxWidth="sm">
         <Typography variant="h1">Share</Typography>
         <ShareForm url={url ?? ""} title={title ?? ""} />
+        <pre>
+          {JSON.stringify({url: url, title: title, query}, undefined, "  ")}
+        </pre>
       </Container>
     </>
   )
