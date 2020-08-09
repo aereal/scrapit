@@ -26,17 +26,6 @@ const AddPage: FC = () => {
         {url !== undefined && title !== undefined ? (
           <ShareForm url={url} title={title} />
         ) : null}
-        <pre>
-          {JSON.stringify(
-            {
-              url: url,
-              title: title,
-              query,
-            },
-            undefined,
-            "  ",
-          )}
-        </pre>
       </Container>
     </>
   )
