@@ -7,22 +7,22 @@
   "theme_color": "#41b059",
   "icons": [
     {
-      "src": "/logo.128x128.webp",
-      "sizes": "128x128",
+      "src": "icon.512x512.png",
+      "sizes": "512x512",
       "purpose": "any",
-      "type": "image/webp"
+      "type": "image/png"
     },
     {
-      "src": "/logo.72x72.webp",
+      "src": "icon.72x72.png",
       "sizes": "72x72",
       "purpose": "any",
-      "type": "image/webp"
+      "type": "image/png"
     },
     {
-      "src": "/logo.48x48.webp",
+      "src": "icon.48x48.png",
       "sizes": "48x48",
       "purpose": "any",
-      "type": "image/webp"
+      "type": "image/png"
     }
   ],
   "share_target": {
