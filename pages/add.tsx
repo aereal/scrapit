@@ -17,7 +17,7 @@ const AddPage: FC = () => {
   return (
     <>
       <Head>
-        <title>Add - Scrapit</title>
+        <title>Add - Kiritoru</title>
         <link rel="icon" href="/logo.512x512.webp" />
         <link rel="manifest" href="/manifest.json" />
       </Head>
