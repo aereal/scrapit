@@ -26,7 +26,7 @@ export const ShareForm: FC<ShareFormProps> = (props) => {
         name="url"
         label="URL"
         fullWidth
-        value={url}
+        defaultValue={url}
         onChange={handleChangeURL}
       />
       <TextField
