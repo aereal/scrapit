@@ -13,6 +13,8 @@ const AddPage: FC = () => {
     <>
       <Head>
         <title>Add - Scrapit</title>
+        <link rel="icon" href="/logo.512x512.webp" />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
       <Container maxWidth="sm">
         <Typography variant="h1">Share</Typography>

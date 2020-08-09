@@ -7,7 +7,8 @@ const Home: FC = () => (
   <>
     <Head>
       <title>Scrapit</title>
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/logo.512x512.webp" />
+      <link rel="manifest" href="/manifest.json" />
     </Head>
     <Container maxWidth="sm">
       <Typography>Scrapit</Typography>

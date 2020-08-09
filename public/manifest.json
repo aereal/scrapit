@@ -1,0 +1,38 @@
+{
+  "name": "Kiritoru",
+  "short_name": "Kiritoru",
+  "lang": "ja-JP",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#41b059",
+  "icons": [
+    {
+      "src": "/logo.128x128.webp",
+      "sizes": "128x128",
+      "purpose": "any",
+      "type": "image/webp"
+    },
+    {
+      "src": "/logo.72x72.webp",
+      "sizes": "72x72",
+      "purpose": "any",
+      "type": "image/webp"
+    },
+    {
+      "src": "/logo.48x48.webp",
+      "sizes": "48x48",
+      "purpose": "any",
+      "type": "image/webp"
+    }
+  ],
+  "share_target": {
+    "action": "/add",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}
