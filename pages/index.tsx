@@ -16,6 +16,23 @@ const Home: FC = () => (
       <title>Kiritoru</title>
       <link rel="icon" href="/logo.512x512.webp" />
       <link rel="manifest" href="/manifest.json" />
+      <meta property="og:image" content="/icon.512x512.png" />
+      <meta property="og:title" content="Kiritoru" />
+      <meta
+        property="og:description"
+        content="Androidの共有メニューにScrapboxにブックマークするアクションを提供するアプリケーションです。"
+      />
+      <meta property="twitter:site" content="@aereal" />
+      <meta property="twitter:creator" content="@aereal" />
+      <meta
+        property="twitter:title"
+        content="Kiritoru - Scrap web pages with Scrapbox"
+      />
+      <meta property="twitter:image" content="/icon.512x512.png" />
+      <meta
+        property="twitter:description"
+        content="Androidの共有メニューにScrapboxにブックマークするアクションを提供するアプリケーションです。"
+      />
     </Head>
     <Container maxWidth="sm">
       <Typography variant="h1">Kiritoru</Typography>
