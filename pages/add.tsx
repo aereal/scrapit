@@ -1,4 +1,3 @@
-import {ParsedUrlQuery} from "querystring"
 import React, {FC} from "react"
 import Head from "next/head"
 import {Container, Typography} from "@material-ui/core"
@@ -6,13 +5,9 @@ import {useRouter} from "next/dist/client/router"
 import {ShareForm} from "../src/components/ShareForm"
 import {getParameter} from "../src/get-parameter"
 
-const getURL = (qs: ParsedUrlQuery): string | undefined =>
-  getParameter(qs, "url") ?? getParameter(qs, "text")
-
 const AddPage: FC = () => {
-  const router = useRouter()
-  const {query} = router
-  const url = getURL(query)
+  const {query} = useRouter()
+  const url = getParameter(query, "url") ?? getParameter(query, "text")
   const title = getParameter(query, "title")
   return (
     <>
