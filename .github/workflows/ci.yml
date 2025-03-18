@@ -32,7 +32,7 @@ jobs:
       - name: build
         run: yarn build
       - name: lint
-        uses: reviewdog/action-eslint@v1.8.0
+        uses: reviewdog/action-eslint@v1.33.2
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-check
