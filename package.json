@@ -9,6 +9,11 @@
     "lint": "eslint . --ext .ts,.tsx",
     "type-check": "tsc --noEmit"
   },
+  "engines": {
+    "node": "18.20.4",
+    "pnpm": "9.15.6"
+  },
+  "packageManager": "pnpm@9.15.6",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
