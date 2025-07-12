@@ -13,27 +13,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Get yarn cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v1
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
         with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      -
-        uses: actions/setup-node@v1
+          version: latest
+      - uses: actions/setup-node@v4
         with:
-          node-version: '12.x'
+          node-version: '18'
+          cache: 'pnpm'
       - name: install
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
       - name: build
-        run: yarn build
+        run: pnpm build
       - name: lint
-        uses: reviewdog/action-eslint@v1.8.0
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-pr-check
-          eslint_flags: 'src/ pages/'
+        run: pnpm lint
+      - name: type-check
+        run: pnpm type-check
