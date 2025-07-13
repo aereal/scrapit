@@ -1,39 +1,16 @@
 import Box from "@mui/material/Box"
-import TextField from "@mui/material/TextField"
-import {ChangeEventHandler, FC, FormEventHandler} from "react"
-import {
-  useProjectValue,
-  useSetProject,
-  useSetTitle,
-  useSetURL,
-  useTitleValue,
-  useURLValue,
-} from "../../atoms"
+import {FC, FormEventHandler} from "react"
+import {useProjectValue, useTitleValue, useURLValue} from "../../atoms"
 import {formatScrapboxNotation} from "../../format-scrapbox-notation"
+import {ProjectInput} from "./project-input"
 import {SubmitButton} from "./submit-button"
+import {TitleInput} from "./title-input"
+import {URLInput} from "./url-input"
 
 export const ShareForm: FC = () => {
   const url = useURLValue()
-  const setURL = useSetURL()
   const title = useTitleValue()
-  const setTitle = useSetTitle()
   const project = useProjectValue()
-  const setProject = useSetProject()
-  const handleChangeURL: ChangeEventHandler<
-    HTMLInputElement | HTMLTextAreaElement
-  > = (e) => {
-    setURL(e.target.value)
-  }
-  const handleChangeTitle: ChangeEventHandler<
-    HTMLInputElement | HTMLTextAreaElement
-  > = (e) => {
-    setTitle(e.target.value)
-  }
-  const handleChangeProject: ChangeEventHandler<
-    HTMLInputElement | HTMLTextAreaElement
-  > = (e) => {
-    setProject(e.target.value)
-  }
   const handleSubmit: FormEventHandler = (event) => {
     event.preventDefault()
     const pageURL = new URL(
@@ -45,29 +22,9 @@ export const ShareForm: FC = () => {
   }
   return (
     <Box component="form" noValidate onSubmit={handleSubmit}>
-      <TextField
-        name="url"
-        label="URL"
-        defaultValue={url}
-        onChange={handleChangeURL}
-        fullWidth
-        required
-      />
-      <TextField
-        name="title"
-        label="Title"
-        defaultValue={title}
-        onChange={handleChangeTitle}
-        fullWidth
-      />
-      <TextField
-        name="scrapbox_project"
-        label="Scrapbox Project"
-        defaultValue={project}
-        onChange={handleChangeProject}
-        fullWidth
-        required
-      />
+      <URLInput />
+      <TitleInput />
+      <ProjectInput />
       <SubmitButton />
     </Box>
   )
