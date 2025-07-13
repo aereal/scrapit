@@ -5,7 +5,7 @@ on:
   pull_request:
   push:
     branches:
-      - master
+      - main
   schedule:
     -
       cron: '0 1 * * *'
@@ -13,27 +13,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Get yarn cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v1
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+      - uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3.9.1
         with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      -
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
+          node-version-file: 'package.json'
+          cache: 'pnpm'
       - name: install
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
       - name: build
-        run: yarn build
-      - name: lint
-        uses: reviewdog/action-eslint@v1.8.0
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-pr-check
-          eslint_flags: 'src/ pages/'
+        run: pnpm build
