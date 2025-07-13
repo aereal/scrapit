@@ -1,13 +1,10 @@
-import Button from "@mui/material/Button";
-import type { FC } from "react";
+import {useCanShareValue} from "@/atoms"
+import Button from "@mui/material/Button"
+import type {FC} from "react"
 
-interface SubmitButtonProps {
-  readonly disabled: boolean;
-}
-
-export const SubmitButton: FC<SubmitButtonProps> = ({ disabled }) => (
+export const SubmitButton: FC = () => (
   <Button
-    disabled={disabled}
+    disabled={!useCanShareValue()}
     variant="contained"
     color="primary"
     size="large"
@@ -16,4 +13,4 @@ export const SubmitButton: FC<SubmitButtonProps> = ({ disabled }) => (
   >
     Scrap
   </Button>
-);
+)

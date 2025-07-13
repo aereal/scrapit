@@ -1,20 +1,24 @@
-"use client"
-
 import Box from "@mui/material/Box"
 import TextField from "@mui/material/TextField"
-import {ChangeEventHandler, FC, FormEventHandler, useState} from "react"
+import {ChangeEventHandler, FC, FormEventHandler} from "react"
+import {
+  useProjectValue,
+  useSetProject,
+  useSetTitle,
+  useSetURL,
+  useTitleValue,
+  useURLValue,
+} from "../../atoms"
 import {formatScrapboxNotation} from "../../format-scrapbox-notation"
 import {SubmitButton} from "./submit-button"
 
-interface ShareFormProps {
-  readonly url: string
-  readonly title: string
-}
-
-export const ShareForm: FC<ShareFormProps> = (props) => {
-  const [url, setURL] = useState(props.url)
-  const [title, setTitle] = useState(props.title)
-  const [project, setProject] = useState("")
+export const ShareForm: FC = () => {
+  const url = useURLValue()
+  const setURL = useSetURL()
+  const title = useTitleValue()
+  const setTitle = useSetTitle()
+  const project = useProjectValue()
+  const setProject = useSetProject()
   const handleChangeURL: ChangeEventHandler<
     HTMLInputElement | HTMLTextAreaElement
   > = (e) => {
@@ -39,7 +43,6 @@ export const ShareForm: FC<ShareFormProps> = (props) => {
     pageURL.searchParams.set("body", notation)
     window.open(pageURL.toString(), "_blank")
   }
-  const valid = url !== "" && project !== ""
   return (
     <Box component="form" noValidate onSubmit={handleSubmit}>
       <TextField
@@ -65,7 +68,7 @@ export const ShareForm: FC<ShareFormProps> = (props) => {
         fullWidth
         required
       />
-      <SubmitButton disabled={!valid} />
+      <SubmitButton />
     </Box>
   )
 }
