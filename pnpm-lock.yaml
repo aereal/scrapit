@@ -27,8 +27,8 @@ importers:
         specifier: 7.2.0
         version: 7.2.0(@emotion/cache@11.14.0)(@emotion/react@11.14.0(@types/react@19.1.12)(react@19.1.1))(@types/react@19.1.12)(next@15.3.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
       jotai:
-        specifier: 2.12.5
-        version: 2.12.5(@types/react@19.1.12)(react@19.1.1)
+        specifier: 2.13.1
+        version: 2.13.1(@babel/template@7.27.2)(@types/react@19.1.12)(react@19.1.1)
       next:
         specifier: 15.3.5
         version: 15.3.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -1393,13 +1393,19 @@ packages:
     resolution: {integrity: sha512-H0dkQoCa3b2VEeKQBOxFph+JAbcrQdE7KC0UkqwpLmv2EC4P41QXP+rqo9wYodACiG5/WM5s9oDApTU8utwj9g==}
     engines: {node: '>= 0.4'}
 
-  jotai@2.12.5:
-    resolution: {integrity: sha512-G8m32HW3lSmcz/4mbqx0hgJIQ0ekndKWiYP7kWVKi0p6saLXdSoye+FZiOFyonnd7Q482LCzm8sMDl7Ar1NWDw==}
+  jotai@2.13.1:
+    resolution: {integrity: sha512-cRsw6kFeGC9Z/D3egVKrTXRweycZ4z/k7i2MrfCzPYsL9SIWcPXTyqv258/+Ay8VUEcihNiE/coBLE6Kic6b8A==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
+      '@babel/core': '>=7.0.0'
+      '@babel/template': '>=7.0.0'
       '@types/react': '>=17.0.0'
       react: '>=17.0.0'
     peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@babel/template':
+        optional: true
       '@types/react':
         optional: true
       react:
@@ -3413,8 +3419,9 @@ snapshots:
       has-symbols: 1.1.0
       set-function-name: 2.0.2
 
-  jotai@2.12.5(@types/react@19.1.12)(react@19.1.1):
+  jotai@2.13.1(@babel/template@7.27.2)(@types/react@19.1.12)(react@19.1.1):
     optionalDependencies:
+      '@babel/template': 7.27.2
       '@types/react': 19.1.12
       react: 19.1.1
 
